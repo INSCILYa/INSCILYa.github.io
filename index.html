@@ -2,69 +2,207 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Team Sxlar</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscily's Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+	    position: relative;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #fff;
+        }
+        .logo {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .pfp {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            margin: 20px auto;
+        }
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .about-me {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .video-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .video-section video {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+        }
+        .socials {
+            text-align: center;
+            padding: 20px 0;
+        }
+        .socials a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin: 0 15px;
+        }
+        .socials a:hover {
+            text-decoration: underline;
+        }
+        .hidden {
+            display: none;
+        }
+        .more-btn {
+            display: block;
+            margin: 0 auto 40px auto;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #fff;
+            background: #764ba2;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+       }
+        .more-btn:hover {
+            background: #667eea;
+        }
+        .usernames {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .usernames h3 {
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+        .usernames p {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+    </style>
+    <script>
+        function toggleMoreImages() {
+            const moreImages = document.getElementById('more-images');
+            const btn = document.getElementById('more-btn');
+            if (moreImages.classList.contains('hidden')) {
+                moreImages.classList.remove('hidden');
+                btn.textContent = 'Show Less';
+            } else {
+                moreImages.classList.add('hidden');
+                btn.textContent = 'Show More';
+            }
+        }
+    </script>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div id="loading">
-        <img src="logo.png" alt="Team Sxlar Logo">
+    <div class="container">
+        <header>
+            <div class="logo">Inscily's Portfolio</div>
+            <nav>
+                <a href="#about">About Me</a>
+                <a href="#gallery">My Work</a>
+                <a href="#video">Video</a>
+                <a href="#socials">Socials</a>
+            </nav>
+        </header>
+        
+        <section id="about">
+            <img src="your-pfp-url.jpg" alt="Profile Picture" class="pfp">
+            <h1>Inscily</h1>
+            <p class="about-me">Hi! I'm Inscily, a 17 year old boy that has lots of interests. Im co-owner of Chaos Region Esports, owner of Royal Practice Scrims, a web developer, a coach(Fortnite), and a photo-editor. Welcome to my portfolio where I showcase some of my works.</p>
+        </section>
+        
+        <section id="gallery">
+            <h2>My Work</h2>
+            <div class="gallery">
+                <img src="image1-url.jpg" alt="Artwork 1">
+                <img src="image2-url.jpg" alt="Artwork 2">
+                <img src="image3-url.jpg" alt="Artwork 3">
+            </div>
+            <button id="more-btn" class="more-btn" onclick="toggleMoreImages()">Show More</button>
+            <div id="more-images" class="gallery hidden">
+                <img src="image4-url.jpg" alt="Artwork 4">
+                <img src="image5-url.jpg" alt="Artwork 5">
+                <img src="image6-url.jpg" alt="Artwork 6">
+		<img src="image7-url.jpg" alt="Artwork 7">
+		<img src="image8-url.jpg" alt="Artwork 8">
+		<img src="image9-url.jpg" alt="Artwork 9">
+		<img src="image10-url.jpg" alt="Artwork 10">
+		<img src="image11-url.jpg" alt="Artwork 11">
+            </div>
+        </section>
+        
+        <section id="video">
+            <h2>Featured Video</h2>
+            <div class="video-section">
+                <video src="your-video-url.mp4" autoplay muted loop></video>
+            </div>
+        </section>
+        
+        <section id="socials">
+            <h2>Find Me Online</h2>
+            <div class="socials">
+                <a href="https://discord.gg/NKxacnCZZD" target="_blank">My Discord Server</a>
+                <a href="https://www.youtube.com/@lnscily" target="_blank">Youtube</a>
+                <a href="https://www.twitch.tv/lnscily" target="_blank">Twitch</a>
+            </div>
+        </section>
+
+        <div class="usernames">
+            <h3>My Usernames</h3>
+            <p>Fortnite: Inscily </p>
+            <p>Discord: inscily</p>
+        </div>
     </div>
-
-    <!-- Header -->
-    <header>
-        <div><strong>Team Sxlar</strong></div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#roster">Roster</a>
-            <a href="#sponsors">Sponsors</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <!-- Sections -->
-    <section id="home">
-        <h1>Welcome to Team Sxlar</h1>
-        <p>Rising stars in Fortnite esports. Join us on our journey to greatness!</p>
-    </section>
-
-    <section id="about">
-        <h1>About Us</h1>
-        <p>Team Sxlar is committed to dominating the competitive Fortnite scene. We aim to inspire and grow the next generation of champions.</p>
-    </section>
-
-    <section id="roster">
-        <h1>Our Roster</h1>
-        <div class="roster-grid">
-            <!-- JavaScript will dynamically add team members -->
-        </div>
-    </section>
-
-    <section id="sponsors">
-        <h1>Our Sponsors</h1>
-        <div class="sponsor-grid">
-            <div class="sponsor-item">
-                <img src="sponsor-logo1.png" alt="Sponsor 1">
-            </div>
-            <div class="sponsor-item">
-                <img src="sponsor-logo2.png" alt="Sponsor 2">
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h1>Contact Us</h1>
-        <p>Join our community on Discord to connect with us!</p>
-        <a href="https://discord.gg/f4t4fCcZrH" style="color: #ff9800; font-size: 1.5rem;">Join Discord</a>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        &copy; 2025 Team Sxlar. All rights reserved.
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
